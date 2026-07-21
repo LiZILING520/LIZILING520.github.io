@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李怡飞 · 电商视觉设计作品集 | Li Yifei Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --color-bg: #faf9f6;
+    --color-card: #ffffff;
+    --color-text: #1a1a1a;
+    --color-text-soft: #5a5a5a;
+    --color-text-light: #8a8a8a;
+    --color-border: #ececec;
+    --color-accent: #b8945e;
+    --color-accent-soft: #d4a574;
+    --color-accent-bg: #f5ede0;
+    --color-rose: #c97b6f;
+    --color-rose-bg: #f9e9e5;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
+    --shadow-lg: 0 16px 48px rgba(0,0,0,0.1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Noto Serif SC", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ===== Navigation ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(250, 249, 246, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: var(--color-text);
+  }
+
+  .logo span { color: var(--color-accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--color-text-soft);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--color-accent); }
+
+  /* ===== Hero ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 32px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -10%; right: -20%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, var(--color-accent-bg) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: -15%; left: -15%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, var(--color-rose-bg) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--color-accent-bg);
+    color: var(--color-accent);
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  .hero h1 {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+
+  .hero h1 .en {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-text-light);
+    letter-spacing: 4px;
+    margin-top: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    color: var(--color-text-soft);
+    margin-bottom: 32px;
+    max-width: 540px;
+  }
+
+  .hero-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .hero-info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text-soft);
+    font-size: 14px;
+  }
+
+  .hero-info-item .dot {
+    width: 4px; height: 4px;
+    background: var(--color-accent);
+    border-radius: 50%;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .stat-item .num {
+    font-family: "Inter", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1;
+  }
+
+  .stat-item .num span {
+    color: var(--color-accent);
+    font-size: 24px;
+  }
+
+  .stat-item .label {
+    font-size: 13px;
+    color: var(--color-text-light);
+    margin-top: 8px;
+  }
+
+  .hero-visual {
+    position: relative;
+    max-width: 280px;
+    aspect-ratio: 3/4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transform: rotate(2deg);
+  }
+
+  .hero-visual img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  /* ===== Sections ===== */
+  section {
+    padding: 100px 32px;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 60px;
+  }
+
+  .section-tag {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--color-text-soft);
+    max-width: 600px;
+  }
+
+  /* ===== About ===== */
+  #about {
+    background: var(--color-card);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-text-soft);
+    margin-bottom: 20px;
+  }
+
+  .about-text strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .info-card {
+    background: var(--color-bg);
+    border-radius: 12px;
+    padding: 32px;
+    border: 1px solid var(--color-border);
+  }
+
+  .info-card h3 {
+    font-size: 14px;
+    color: var(--color-text-light);
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .info-list {
+    list-style: none;
+  }
+
+  .info-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 14px;
+  }
+
+  .info-list li:last-child { border-bottom: none; }
+
+  .info-list .label {
+    color: var(--color-text-light);
+  }
+
+  .info-list .value {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  /* ===== Gallery ===== */
+  .gallery {
+    display: grid;
+    gap: 24px;
+  }
+
+  .gallery-2 { grid-template-columns: repeat(2, 1fr); }
+  .gallery-3 { grid-template-columns: repeat(3, 1fr); }
+  .gallery-mix {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--color-card);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s;
+    cursor: pointer;
+    aspect-ratio: 1;
+  }
+
+  .gallery-item.tall { grid-row: span 2; aspect-ratio: auto; }
+
+  .gallery-item.wide {
+    aspect-ratio: auto;
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  .gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+
+  .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+  .gallery-item-info {
+    color: #fff;
+  }
+
+  .gallery-item-info .cat {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--color-accent-soft);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .gallery-item-info .title {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  /* ===== Category Cards ===== */
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .category-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .category-num {
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .category-content h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .category-content p {
+    font-size: 14px;
+    color: var(--color-text-soft);
+    line-height: 1.6;
+  }
+
+  /* ===== Packaging Section ===== */
+  .packaging-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+
+  .packaging-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s;
+  }
+
+  .packaging-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .packaging-card-preview {
+    aspect-ratio: 4/3;
+    background: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .packaging-card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 16px;
+  }
+
+  .packaging-card-preview.placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--color-text-light);
+    font-size: 13px;
+  }
+
+  .packaging-card-info {
+    padding: 16px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .packaging-card-info .name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 4px;
+  }
+
+  .packaging-card-info .type {
+    font-size: 12px;
+    color: var(--color-text-light);
+  }
+
+  /* ===== Tools ===== */
+  .tools {
+    background: var(--color-card);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .tool-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .tool-icon {
+    width: 56px; height: 56px;
+    margin: 0 auto 16px;
+    background: var(--color-card);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .tool-icon svg { width: 28px; height: 28px; }
+
+  .tool-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .tool-desc {
+    font-size: 12px;
+    color: var(--color-text-light);
+  }
+
+  /* ===== Contact ===== */
+  .contact {
+    text-align: center;
+  }
+
+  .contact h2 {
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+
+  .contact p {
+    font-size: 18px;
+    color: var(--color-text-soft);
+    margin-bottom: 40px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 36px;
+    background: var(--color-text);
+    color: var(--color-bg);
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .contact-cta:hover {
+    transform: translateY(-2px);
+    background: var(--color-accent);
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    padding: 40px 32px;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-light);
+    font-size: 13px;
+  }
+
+  /* ===== Lightbox ===== */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s;
+  }
+
+  .lightbox.active { display: flex; }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 30px; right: 30px;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    width: 44px; height: 44px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* ===== Reveal animation ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero h1 { font-size: 44px; }
+    .hero-visual { max-width: 180px; margin: 0 auto; }
+    .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .stat-item .num { font-size: 28px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .section-title { font-size: 32px; }
+    .gallery-2, .gallery-3, .gallery-mix { grid-template-columns: 1fr 1fr; }
+    .gallery-mix .gallery-item:first-child { grid-column: span 2; }
+    .packaging-gallery { grid-template-columns: repeat(3, 1fr); }
+    .categories { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact h2 { font-size: 36px; }
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 100px 20px 60px; }
+    section { padding: 70px 20px; }
+    .hero h1 { font-size: 36px; }
+    .hero h1 .en { font-size: 14px; letter-spacing: 2px; }
+    .hero-subtitle { font-size: 16px; }
+    .gallery-2, .gallery-3, .gallery-mix { grid-template-columns: 1fr; }
+    .gallery-mix .gallery-item:first-child { grid-column: span 1; }
+    .packaging-gallery { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: 1fr 1fr; }
+    .section-title { font-size: 28px; }
+    .contact h2 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">LIYIFEI<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">关于</a></li>
+      <li><a href="#main">主图设计</a></li>
+      <li><a href="#creative">营销创意</a></li>
+      <li><a href="#homepage">活动首页</a></li>
+      <li><a href="#detail">详情页</a></li>
+      <li><a href="#retouch">产品精修</a></li>
+      <li><a href="#packaging">包装设计</a></li>
+      <li><a href="#contact">联系</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">PORTFOLIO · 作品集</div>
+      <h1>
+        李怡飞
+        <span class="en">LI YIFEI · E-COMMERCE VISUAL DESIGNER</span>
+      </h1>
+      <p class="hero-subtitle">10年电商视觉设计经验，专注美妆个护与保健食品类目。独立主导超过300+个产品项目的主图、详情页、活动首页、营销创意图及包装设计全链路视觉方案。</p>
+      <div class="hero-info">
+        <div class="hero-info-item"><span class="dot"></span>广州 · 白云区</div>
+        <div class="hero-info-item"><span class="dot"></span>10年视觉设计经验</div>
+        <div class="hero-info-item"><span class="dot"></span>5大平台经验</div>
+        <div class="hero-info-item"><span class="dot"></span>电商视觉全链路</div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="num">10<span>+</span></div>
+          <div class="label">年视觉设计经验</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">300<span>+</span></div>
+          <div class="label">产品项目</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">5</div>
+          <div class="label">运营平台</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/_微信图片_20260706153347_175_37.jpg" alt="李怡飞">
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">ABOUT · 个人简介</div>
+      <h2 class="section-title">用视觉语言为品牌创造商业价值</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>我是<strong>李怡飞</strong>，一名拥有10年经验的<strong>电商视觉设计师</strong>。现就职于<strong>广州市禾宜贸易有限公司</strong>（2019.05至今），独立负责公司旗下天猫、淘宝、拼多多、小红书、抖音5大平台5家以上店铺的全套视觉设计工作。</p>
+        <p>我的核心能力覆盖电商视觉全链路——从<strong>产品主图、详情页、活动首页、营销创意图</strong>到<strong>产品包装设计</strong>，已主导完成超300个产品项目。同时兼顾短视频拍摄剪辑（月产15-20支），为多平台内容矩阵提供视觉支持。</p>
+        <p>熟练运用 Photoshop、Illustrator、Dreamweaver、剪映等工具，具备 TEM-4 英语能力和全国计算机应用技术证书。希望加入一个注重<strong>视觉品质与品牌审美的团队</strong>，持续在电商设计领域深耕创作。</p>
+      </div>
+      <div class="info-card reveal">
+        <h3>个人概况</h3>
+        <ul class="info-list">
+          <li><span class="label">姓名</span><span class="value">李怡飞 / Li Yifei</span></li>
+          <li><span class="label">性别 / 年龄</span><span class="value">女 · 31岁</span></li>
+          <li><span class="label">所在地</span><span class="value">广州 · 白云区</span></li>
+          <li><span class="label">学历</span><span class="value">广东交通职业技术学院</span></li>
+          <li><span class="label">专业</span><span class="value">计算机应用技术（电子商务方向）<br/>大专</span></li>
+          <li><span class="label">证书</span><span class="value">TEM-4 / 全国计算机应用技术证书</span></li>
+          <li><span class="label">联系电话</span><span class="value">188-1931-1804</span></li>
+          <li><span class="label">邮箱</span><span class="value">18819311804@163.com</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="categories">
+      <div class="category-card reveal">
+        <div class="category-num">01</div>
+        <div class="category-content">
+          <h4>电商视觉全链路</h4>
+          <p>主图、详情页、活动首页、营销创意图、包装设计的全套视觉方案输出</p>
+        </div>
+      </div>
+      <div class="category-card reveal">
+        <div class="category-num">02</div>
+        <div class="category-content">
+          <h4>多平台适配</h4>
+          <p>天猫/淘宝/拼多多/小红书/抖音5大平台规范、尺寸、风格的自适应设计</p>
+        </div>
+      </div>
+      <div class="category-card reveal">
+        <div class="category-num">03</div>
+        <div class="category-content">
+          <h4>产品精修与合成</h4>
+          <p>产品图后期精修、材质光影还原、色彩校正与创意合成</p>
+        </div>
+      </div>
+      <div class="category-card reveal">
+        <div class="category-num">04</div>
+        <div class="category-content">
+          <h4>内容与包装</h4>
+          <p>短视频拍摄剪辑（月产15-20支）+ 产品包装视觉设计</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Image Design -->
+<section id="main">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">01 · PRODUCT MAIN IMAGES</div>
+      <h2 class="section-title">产品主图设计</h2>
+      <p class="section-desc">跨品类主图视觉方案，涵盖天猫/淘宝800×800与750×1000两种规格。聚焦核心卖点，结合场景化氛围，提升点击率与转化效果。</p>
+    </div>
+    <div class="gallery gallery-3">
+      <!-- 烟酰胺胶原蛋白饮 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/烟酰胺胶原蛋白饮_新主图750.jpg" alt="烟酰胺胶原蛋白饮主图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">美容饮品</div>
+            <div class="title">烟酰胺胶原蛋白饮</div>
+          </div>
+        </div>
+      </div>
+      <!-- 白番茄饮 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/白番茄饮_新主图750b新.jpg" alt="白番茄饮主图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">口服美容</div>
+            <div class="title">白番茄饮</div>
+          </div>
+        </div>
+      </div>
+      <!-- 白葡萄谷胱甘肽饮 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/白葡萄谷胱甘肽饮_主图7501.jpg" alt="白葡萄谷胱甘肽饮主图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">口服美容</div>
+            <div class="title">白葡萄谷胱甘肽饮</div>
+          </div>
+        </div>
+      </div>
+      <!-- 黑枸杞原浆 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/黑枸杞原浆_主图7501.jpg" alt="黑枸杞原浆主图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">健康食品</div>
+            <div class="title">黑枸杞原浆</div>
+          </div>
+        </div>
+      </div>
+      <!-- 左旋肉碱咖啡 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/左旋肉碱咖啡_主图7502.jpg" alt="左旋肉碱咖啡主图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">健康饮品</div>
+            <div class="title">左旋肉碱咖啡粉</div>
+          </div>
+        </div>
+      </div>
+      <!-- 红参石榴饮 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/红参石榴饮_主图80012.jpg" alt="红参石榴饮主图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">滋补饮品</div>
+            <div class="title">红参石榴饮</div>
+          </div>
+        </div>
+      </div>
+      <!-- 酵素梅 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/酵素梅_酵素梅主图.jpg" alt="酵素梅主图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">健康食品</div>
+            <div class="title">酵素梅</div>
+          </div>
+        </div>
+      </div>
+      <!-- 减肥茶 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/减肥茶_新主图7501.jpg" alt="秀尔茶主图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">保健茶饮</div>
+            <div class="title">秀尔茶 · 冬瓜荷叶</div>
+          </div>
+        </div>
+      </div>
+      <!-- 白番茄瓶装 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/白番茄瓶装_新主图7501.jpg" alt="白番茄瓶装主图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">口服美容</div>
+            <div class="title">白番茄瓶装</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marketing Creative -->
+<section id="creative" style="background: var(--color-card); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">02 · MARKETING CREATIVE</div>
+      <h2 class="section-title">营销创意图</h2>
+      <p class="section-desc">围绕产品功效、消费场景、促销利益点打造的高点击率创意物料，含方图与长图两种规格，适配直通车、引力魔方等多场景投放。</p>
+    </div>
+    <div class="gallery gallery-3">
+      <!-- 烟酰胺胶原蛋白饮 - 方图 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/烟酰胺胶原蛋白饮__方图d21.jpg" alt="胶原蛋白方图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">方图 · 美容饮品</div>
+            <div class="title">烟酰胺胶原蛋白 · 全身牛奶白</div>
+          </div>
+        </div>
+      </div>
+      <!-- 白番茄饮 - 方图 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/白番茄饮__方图d14.jpg" alt="白番茄方图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">方图 · 口服美容</div>
+            <div class="title">白番茄饮 · 亮白场景</div>
+          </div>
+        </div>
+      </div>
+      <!-- 虾青素 - 长图 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/虾青素__长图18.jpg" alt="虾青素长图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">长图 · 保健食品</div>
+            <div class="title">虾青素 · 抗氧修护</div>
+          </div>
+        </div>
+      </div>
+      <!-- 胶原蛋白粉 - 长图 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/胶原蛋白粉_长图2.jpg" alt="胶原蛋白粉长图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">长图 · 美容食品</div>
+            <div class="title">胶原蛋白粉 · 弹润肌肤</div>
+          </div>
+        </div>
+      </div>
+      <!-- 白葡萄谷胱甘肽饮 - 长图 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/白葡萄谷胱甘肽饮__长图a21.jpg" alt="白葡萄长图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">长图 · 口服美容</div>
+            <div class="title">白葡萄谷胱甘肽 · 七白养肤</div>
+          </div>
+        </div>
+      </div>
+      <!-- 红参石榴饮 - 方图 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/红参石榴饮_方图3.jpg" alt="红参石榴方图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">方图 · 滋补饮品</div>
+            <div class="title">红参石榴饮 · 元气补充</div>
+          </div>
+        </div>
+      </div>
+      <!-- 黑枸杞原浆 - 长图 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/黑枸杞原浆_长图3.jpg" alt="黑枸杞长图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">长图 · 健康食品</div>
+            <div class="title">黑枸杞原浆 · 花青素护眼</div>
+          </div>
+        </div>
+      </div>
+      <!-- 白番茄瓶装 - 长图 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/白番茄瓶装__瓶装长图2.jpg" alt="白番茄瓶装长图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">长图 · 口服美容</div>
+            <div class="title">白番茄瓶装 · 便携场景</div>
+          </div>
+        </div>
+      </div>
+      <!-- 烟酰胺胶原蛋白 - 长图 -->
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/烟酰胺胶原蛋白饮__长图b21.jpg" alt="胶原蛋白长图">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">长图 · 美容饮品</div>
+            <div class="title">胶原蛋白 · 嫩肤养成</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Campaign Homepage -->
+<section id="homepage">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">03 · CAMPAIGN HOMEPAGE</div>
+      <h2 class="section-title">活动首页设计</h2>
+      <p class="section-desc">大促、节日、会员日等不同营销节点的整店首页设计，覆盖美妆与男士两大品类。注重氛围营造与商品分层，引导用户深度浏览。</p>
+    </div>
+    <div class="gallery gallery-3">
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/首页_双十一.jpg" alt="双十一活动">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">大促活动</div>
+            <div class="title">双 11 盛典 · 整店首页</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/首页_圣诞.jpg" alt="圣诞活动">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">节日活动</div>
+            <div class="title">圣诞冰雪奇缘</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/首页_天猫男人装PC端首页.jpg" alt="天猫男人装">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">男士品类</div>
+            <div class="title">天猫男人装 · PC端首页</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/首页_组合.jpg" alt="产品组合">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">产品组合</div>
+            <div class="title">多品组合 · 套装首页</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/首页_感恩节.jpg" alt="感恩节活动">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">节日活动</div>
+            <div class="title">感恩节 · 暖心回馈</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/首页_劳动.jpg" alt="劳动节活动">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">节日活动</div>
+            <div class="title">劳动节 · 致敬辛勤</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/首页_妇女.jpg" alt="妇女节活动">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">节日活动</div>
+            <div class="title">妇女节 · 宠爱自己</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/首页_日常1.jpg" alt="日常首页">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">日常首页</div>
+            <div class="title">日常版首页 · 春夏</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/首页_新年.jpg" alt="新年活动">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">节日活动</div>
+            <div class="title">新年焕新 · 开年大促</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Detail Page -->
+<section id="detail" style="background: var(--color-card); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">04 · DETAIL PAGE DESIGN</div>
+      <h2 class="section-title">详情页设计</h2>
+      <p class="section-desc">长图式产品详情页，从用户痛点出发构建完整说服链条：场景代入 → 功效论证 → 资质背书 → 促销转化。</p>
+    </div>
+    <div class="gallery gallery-3">
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/烟酰胺胶原蛋白饮_详情.jpg" alt="胶原蛋白详情">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">详情页 · 美容饮品</div>
+            <div class="title">烟酰胺胶原蛋白饮</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/左旋肉碱咖啡_详情.jpg" alt="左旋肉碱咖啡详情">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">详情页 · 健康饮品</div>
+            <div class="title">左旋肉碱咖啡粉</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/白番茄饮_详情.jpg" alt="白番茄详情">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">详情页 · 口服美容</div>
+            <div class="title">白番茄饮</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/白葡萄谷胱甘肽饮_详情.jpg" alt="白葡萄详情">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">详情页 · 口服美容</div>
+            <div class="title">白葡萄谷胱甘肽饮</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/黑枸杞原浆_详情页.jpg" alt="黑枸杞详情">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">详情页 · 健康食品</div>
+            <div class="title">黑枸杞原浆</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/酵素梅_新详情.jpg" alt="酵素梅详情">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">详情页 · 健康食品</div>
+            <div class="title">酵素梅</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/减肥茶_新详情.jpg" alt="减肥茶详情">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">详情页 · 保健茶饮</div>
+            <div class="title">秀尔茶 · 冬瓜荷叶茶</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/钙维D_详情.jpg" alt="钙维D详情">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">详情页 · 保健食品</div>
+            <div class="title">钙维生素D软胶囊</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Retouching -->
+<section id="retouch">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">05 · PRODUCT RETOUCHING</div>
+      <h2 class="section-title">产品精修</h2>
+      <p class="section-desc">产品图后期精修：抠图、材质光影还原、色彩校正与创意合成。涵盖护肤品、彩妆、日化等多品类，服务于主图与详情页的统一视觉调性。</p>
+    </div>
+    <div class="gallery gallery-3">
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/精修_韩后-BB霜-有盖-802.jpg" alt="BB霜精修">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">彩妆精修</div>
+            <div class="title">韩后 · BB 霜光影重塑</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/精修_原液-玻尿酸-合盖2.jpg" alt="玻尿酸精修">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">护肤品精修</div>
+            <div class="title">玻尿酸原液 · 瓶器质感</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/精修_柔润嫩白护手霜2.jpg" alt="护手霜精修">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">日化精修</div>
+            <div class="title">柔润嫩白护手霜</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/精修_面膜.jpg" alt="面膜精修">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">护肤品精修</div>
+            <div class="title">扣妆面膜包装合成</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/精修_啫喱2.jpg" alt="啫喱精修">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">日化精修</div>
+            <div class="title">清爽啫喱 · 材质表现</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="assets/精修_晶致密集系列-多元晶致日霜-802.jpg" alt="日霜精修">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-info">
+            <div class="cat">护肤品精修</div>
+            <div class="title">多元晶致日霜 · 高级感光影</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Packaging Design -->
+<section id="packaging" style="background: var(--color-card); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">06 · PACKAGING DESIGN</div>
+      <h2 class="section-title">包装设计</h2>
+      <p class="section-desc">产品包装视觉设计（AI矢量源文件），涵盖外盒、内袋、瓶贴等多种包装形态。以下为Illustrator设计稿的预览样机图。</p>
+    </div>
+    <div class="packaging-gallery" id="packaging-gallery">
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/01_秀尔茶_·_冬瓜荷叶茶外盒.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/01_秀尔茶_·_冬瓜荷叶茶外盒.jpg" alt="秀尔茶外盒" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">秀尔茶 · 冬瓜荷叶茶</div>
+          <div class="type">外盒包装</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/02_左旋肉碱咖啡内袋.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/02_左旋肉碱咖啡内袋.jpg" alt="左旋肉碱内袋" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">左旋肉碱咖啡</div>
+          <div class="type">内袋包装</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/03_左旋肉碱咖啡外盒.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/03_左旋肉碱咖啡外盒.jpg" alt="左旋肉碱外盒" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">左旋肉碱咖啡</div>
+          <div class="type">外盒包装</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/04_左旋肉碱咖啡说明书.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/04_左旋肉碱咖啡说明书.jpg" alt="左旋肉碱说明书" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">左旋肉碱咖啡</div>
+          <div class="type">产品说明书</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/05_木瓜葛根片外盒.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/05_木瓜葛根片外盒.jpg" alt="木瓜葛根片外盒" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">木瓜葛根片</div>
+          <div class="type">外盒包装</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/06_樱花胶原蛋白饮外盒+内袋.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/06_樱花胶原蛋白饮外盒+内袋.jpg" alt="樱花胶原蛋白饮" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">樱花胶原蛋白饮</div>
+          <div class="type">外盒 + 内袋</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/07_烟酰胺胶原蛋白饮外盒+内袋.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/07_烟酰胺胶原蛋白饮外盒+内袋.jpg" alt="烟酰胺胶原蛋白饮" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">烟酰胺胶原蛋白饮</div>
+          <div class="type">外盒 + 内袋</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/08_白番茄瓶装外盒.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/08_白番茄瓶装外盒.jpg" alt="白番茄瓶装" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">白番茄瓶装</div>
+          <div class="type">外盒包装</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/09_白番茄饮外盒.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/09_白番茄饮外盒.jpg" alt="白番茄饮外盒" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">白番茄饮</div>
+          <div class="type">外盒包装</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/10_白葡萄谷胱甘肽饮外盒.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/10_白葡萄谷胱甘肽饮外盒.jpg" alt="白葡萄谷胱甘肽饮" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">白葡萄谷胱甘肽饮</div>
+          <div class="type">外盒包装</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/11_胶原蛋白粉外盒+内袋.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/11_胶原蛋白粉外盒+内袋.jpg" alt="胶原蛋白粉" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">胶原蛋白粉</div>
+          <div class="type">外盒 + 内袋</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/12_虾青素凝胶糖果外盒.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/12_虾青素凝胶糖果外盒.jpg" alt="虾青素" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">虾青素凝胶糖果</div>
+          <div class="type">外盒包装</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/13_酵素梅内膜.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/13_酵素梅内膜.jpg" alt="酵素梅内膜" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">酵素梅</div>
+          <div class="type">内膜包装</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/14_酵素梅外盒.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/14_酵素梅外盒.jpg" alt="酵素梅外盒" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">酵素梅</div>
+          <div class="type">外盒包装</div>
+        </div>
+      </div>
+      <div class="packaging-card reveal" onclick="openLightboxFromSrc('packaging/15_黑枸杞原浆内袋.jpg')">
+        <div class="packaging-card-preview">
+          <img src="packaging/15_黑枸杞原浆内袋.jpg" alt="黑枸杞原浆内袋" loading="lazy">
+        </div>
+        <div class="packaging-card-info">
+          <div class="name">黑枸杞原浆</div>
+          <div class="type">内袋包装</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tools -->
+<section class="tools" id="tools">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">TOOLS · 工具与平台</div>
+      <h2 class="section-title">日常工作流</h2>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card reveal">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3h18v18H3V3z" stroke="#FF9A00" stroke-width="2"/>
+            <path d="M7 8h4M7 12h4M7 16h4M14 8h3M14 12h3M14 16h3" stroke="#FF9A00" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="tool-name">Photoshop</div>
+        <div class="tool-desc">主图/详情/精修</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#FF9A00" stroke-width="2"/>
+            <path d="M8 8l8 8M16 8l-8 8" stroke="#FF9A00" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="tool-name">Illustrator</div>
+        <div class="tool-desc">包装/矢量设计</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="#5A8DEE" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="6" cy="6" r="1.5" fill="#5A8DEE"/>
+            <circle cx="18" cy="12" r="1.5" fill="#5A8DEE"/>
+            <circle cx="9" cy="18" r="1.5" fill="#5A8DEE"/>
+          </svg>
+        </div>
+        <div class="tool-name">剪映</div>
+        <div class="tool-desc">短视频剪辑</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#1FAE5A" stroke-width="2"/>
+            <path d="M7 12l3 3 7-7" stroke="#1FAE5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="tool-name">Office / WPS</div>
+        <div class="tool-desc">数据/文档处理</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="#FF4D4F" stroke-width="2"/>
+            <path d="M12 7v5l3 2" stroke="#FF4D4F" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="tool-name">天猫 / 淘宝</div>
+        <div class="tool-desc">店铺设计</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 4h14l-1 6H6L5 4z" stroke="#FF0050" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M5 10v10h14V10" stroke="#FF0050" stroke-width="2"/>
+            <circle cx="9" cy="14" r="1.5" fill="#FF0050"/>
+            <circle cx="15" cy="14" r="1.5" fill="#FF0050"/>
+          </svg>
+        </div>
+        <div class="tool-name">抖音 / 小红书</div>
+        <div class="tool-desc">内容设计</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 7h16M4 12h16M4 17h10" stroke="#E02E2E" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="17" r="2" stroke="#E02E2E" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="tool-name">拼多多</div>
+        <div class="tool-desc">店铺设计</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="16" rx="2" stroke="#9C27B0" stroke-width="2"/>
+            <path d="M3 9h18" stroke="#9C27B0" stroke-width="2"/>
+            <circle cx="7" cy="6.5" r="0.8" fill="#9C27B0"/>
+            <circle cx="9.5" cy="6.5" r="0.8" fill="#9C27B0"/>
+          </svg>
+        </div>
+        <div class="tool-name">Dreamweaver</div>
+        <div class="tool-desc">网页设计</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="section-header reveal" style="margin-bottom: 30px;">
+      <div class="section-tag">CONTACT · 联系方式</div>
+    </div>
+    <h2 class="reveal">期待与您合作</h2>
+    <p class="reveal">如果您正在寻找一位具备全链路电商视觉设计能力、熟悉多平台规范的设计师，期待进一步沟通。</p>
+    <a href="tel:18819311804" class="contact-cta reveal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      188-1931-1804
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 李怡飞 Li Yifei · 电商视觉设计作品集</p>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close" onclick="closeLightbox()">×</div>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  function openLightbox(el) {
+    const img = el.querySelector('img');
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function openLightboxFromSrc(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  reveals.forEach((el) => observer.observe(el));
+
+  // Smooth scroll for nav
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
